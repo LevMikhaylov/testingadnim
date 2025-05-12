@@ -47,7 +47,7 @@ class OpenCartAdminPanelTest:
         time.sleep(2)
 
     def search_product(self, product_name):
-        self.driver.get("https://demo.opencart.com/") 
+        self.driver.get("https://demo.opencart.com/admin/index.php?route=common/dashboard&user_token=23a5515966722081bf3cd0cc97ffdc83") 
         search_box = self.driver.find_element(By.NAME, "search")
         search_box.send_keys(product_name)
         search_box.send_keys(Keys.RETURN)
