@@ -6,14 +6,14 @@ import time
 class OpenCartAdminPanelTest:
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.driver.get("http://shop.epageview.com/admin/")
+        self.driver.get("https://demo.opencart.com/admin/")
         self.login()
 
     def login(self):
         username = self.driver.find_element(By.NAME, "username")
         password = self.driver.find_element(By.NAME, "password")
-        username.send_keys("your_username")  # Замените на ваше имя пользователя
-        password.send_keys("your_password")  # Замените на ваш пароль
+        username.send_keys("demo")  
+        password.send_keys("demo") 
         password.send_keys(Keys.RETURN)
         time.sleep(2)  # Ждем загрузки страницы
 
@@ -39,7 +39,7 @@ class OpenCartAdminPanelTest:
 
         # Выбор категории
         self.driver.find_element(By.LINK_TEXT, "Data").click()
-        self.driver.find_element(By.NAME, "category[]").send_keys("Devices")  # Выбираем категорию
+        self.driver.find_element(By.NAME, "category[]").send_keys("Devices")  
         time.sleep(1)
         self.driver.find_element(By.NAME, "category[]").send_keys(Keys.RETURN)
 
@@ -47,7 +47,7 @@ class OpenCartAdminPanelTest:
         time.sleep(2)
 
     def search_product(self, product_name):
-        self.driver.get("http://your-opencart-url/")  # Замените на URL вашего магазина
+        self.driver.get("https://demo.opencart.com/") 
         search_box = self.driver.find_element(By.NAME, "search")
         search_box.send_keys(product_name)
         search_box.send_keys(Keys.RETURN)
